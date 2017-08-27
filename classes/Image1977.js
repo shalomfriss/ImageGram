@@ -1,34 +1,23 @@
 // Write JavaScript here 
 "use strict";
-class Image1977 extends HTMLElement {
+class Image1977 extends ImageBase {
 
    constructor() {
        super();
    }
    
    createdCallback(){
-	   var w = this.attributes.width.value;
-	   var h = this.attributes.height.value;
+	   super.createdCallback();
 	   
-        this.innerHTML = ""+
-	   			"<style>"+
-				"	img-1977 img { position:absolute; top: 0px; left: 0px; -webkit-filter: contrast(1.1) brightness(1.1) saturate(1.3); filter: contrast(1.1) brightness(1.1) saturate(1.3); }"+
-	   			"	img-1977 div { position:absolute; top: 0px; left: 0px; background: rgba(243, 106, 188, 0.3); mix-blend-mode: screen;  width: " + w + "; height: " + h + "; z-index:2;}"+
-				"</style>"+
-	   			"<div></div>"+
-                 "     <img/>"+
-                 "";
-				 
-	    var div = this.children[1];
-		var img = this.children[2];
-		
-		for(var i = 0; i < this.attributes.length; i++)
-		{
-			var att = this.attributes[i];
-			img.setAttribute(att.name, att.value);
+		var img = this.children[0];
+		img.onload = function(){
+			this.innerHTML += "<style>"+
+				"	img-1977 img {  position: absolute; -webkit-filter: contrast(1.1) brightness(1.1) saturate(1.3); filter: contrast(1.1) brightness(1.1) saturate(1.3); }"+
+				"	img-1977 div { mix-blend-mode: screen; background: rgba(243, 106, 188, 0.4); width: " + img.clientWidth + "; height: " + img.clientHeight + ";  z-index:2;}"+
+				"</style>";
 		}
+		
    }
    
 }
-
 document.registerElement("img-1977", Image1977);
