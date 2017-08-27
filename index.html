@@ -19,13 +19,14 @@
 			top: 310px;
 			left: 10px;
 			background-color: #ffffff;
-			color: #252525;
+			color: #565656;
 			padding-left: 5px;
 			padding-right: 5px;
 			padding-top:4px;
 			padding-bottom: 2px;
 			width: 100px;
 			z-index:5;
+			font-weight: bold;
 		}
 		
 	</style>
@@ -203,5 +204,14 @@
 		<div class="label">X-pro II</div><br/>
 		<img-xpro2 src="test2.jpg"></img-xpro2>
 	</div>
+	
+	<script>
+		var els = document.getElementsByClassName("imagex");
+		for(var i = 0; i < els.length; i++)
+		{
+			//console.log(els[i].children[2].attributes.src.value);
+			//els[i].children[2].attributes.src.value = "test.jpg";
+		}
+	</script>
 </body>
 </html>
