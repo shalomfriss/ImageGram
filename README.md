@@ -6,3 +6,5 @@ The filter css was gotten from CSSGram (https://una.im/CSSgram/) with minor modi
 
 Note, this was built using custom elements which are not yet widely supported but will be in the future (http://caniuse.com/#feat=custom-elements).  Also, ImageBase.js is the base class for all the filters, it must always
 be included.
+
+Demo: http://shalomfriss.com/2017/demos/imagegram/
